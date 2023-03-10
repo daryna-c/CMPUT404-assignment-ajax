@@ -24,5 +24,13 @@ References:
 
     https://www.w3docs.com/snippets/javascript/how-to-get-all-property-values-of-a-javascript-object.html
 
+    https://stackoverflow.com/a/61133135
+
+    https://www.w3schools.com/graphics/canvas_images.asp
+
+    https://stackoverflow.com/a/69391489
+
+Background image is under Creative Commons Zero 1.0 Public Domain License.
+
 
 
