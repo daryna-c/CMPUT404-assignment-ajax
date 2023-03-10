@@ -47,7 +47,7 @@ References:
 
     https://www.html5canvastutorials.com/tutorials/html5-canvas-circles/
 
-Background image is under Creative Commons Zero 1.0 Public Domain License.
+background.png is under Creative Commons Zero 1.0 Public Domain License.
 
 
 

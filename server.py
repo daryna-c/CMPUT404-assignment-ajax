@@ -14,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#   Reference:
+#      https://github.com/uofa-cmput404/cmput404-slides/blob/a8843657fcca3a1c6006a2baf6dc5308893574d7/examples/ObserverExampleAJAX/inspid.py 
+#      under the Apache License, Version 2.0, Copyright 2013 Abram Hindle and Copyright 2019 Hazel Victoria Campbell
+#
 # You can start this by executing it in python:
 # python server.py
 #
