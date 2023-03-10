@@ -40,6 +40,9 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
                 if (xhr.status==200) {
                     //XXX: parse some JSON from the request!
                     //XXX: Pass the data to the callback!
+                    let data = JSON.parse(xhr.responseText)
+                    console.log(callback)
+                    //callback(data)
                 }
             } 
             catch(e) {
@@ -50,6 +53,13 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
     //XXX: POST to a URL
     //XXX: set the mimetype and the accept headers!
     // Remember to use application/json !
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(objects)
+    })
 }
 
 
@@ -137,7 +147,14 @@ function getPosition(e) {
 function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
-    //XXX: Send a XHTML Request that updates the entity you just  modified!
+    //XXX: Send a XHTML Request that updates the entity you just  modified!    
+    fetch("../entity/"+ entity, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 
 }
 
@@ -262,10 +279,28 @@ mouse.mousedraggers.push(function(x,y,clicked,e) {
 
 function update() {
     //XXX: TODO Get the world from the webservice using a XMLHTTPRequest
-    drawFrame();
+    /* for (const key of Object.keys(world)) {
+        let url = "../entity/" + key
+        console.log(url)
+        sendJSONXMLHTTPRequest(url, world[key], this)    
+    } */
+    var request = new Request("../world");
+    fetch(request, { method: 'GET' }).then((response) => {
+        if (response.status === 200) { // OK
+            //let newWorld = response.json();
+            //if (newWorld === JSON.stringify(world))
+            //world = JSON.parse(newWorld)
+            return response.json();
+        } else {
+            alert("Something went wrong: " + response.status);
+        }
+    }).then((data) => {
+        world = data;
+        drawFrame(); 
+    });
 }
 
-// 30 frames per second
+// 30 frames per scond
 setInterval( update, 1000/30.0);
 
 
