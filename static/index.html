@@ -21,6 +21,9 @@
         limitations under the License.
     "/>
     <script src="json2.js"></script>
+    <style>
+
+    </style>
   </head> 
   <body bgcolor="black" height="100%" width="100%"> 
     <div height="10%" width="100%">
@@ -49,10 +52,6 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
                 if (xhr.status==200) {
                     //XXX: parse some JSON from the request!
                     //XXX: Pass the data to the callback!
-                    let data = JSON.parse(xhr.responseText)
-                    
-                    console.log(callback)
-                    callback(data)
                 }
             } 
             catch(e) {
@@ -304,12 +303,15 @@ function update() {
         }
     }).then((data) => {
         world = data;
+        drawNextFrame();
         drawFrame(); 
     });
 }
 
 // 30 frames per scond
 setInterval( update, 1000/30.0);
+//setInterval( update, 1000/10.0);
+
 
 
 
