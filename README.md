@@ -47,6 +47,12 @@ References:
     https://www.w3schools.com/csS/css3_buttons.asp
 
     https://www.html5canvastutorials.com/tutorials/html5-canvas-circles/
+    
+    Stackoverflow Answer
+    Title: Why doesn't image show on load, but shows on refresh?
+    https://stackoverflow.com/a/7029564
+    Author: pimvdb
+    https://stackoverflow.com/users/514749/pimvdb
 
 background.png is under Creative Commons Zero 1.0 Public Domain License.
 
